@@ -1,0 +1,28 @@
+1) For survey.py, why do they build up the processing that way into such small pieces? Like from creating the object to reading it via ReadRecords to getting the filenamde with GetFilename to ReadFile and constructing and object.
+
+Methods the Pregnancy class has:
+* ReadRecords - Reads the file and recodes it. (Same method as ReadRecords in the Respondents class, except the "ReadFile" method has Pregnancy passed as the constructor)
+* GetFileName - This is hard-coded to get the specific data file for pregnancies
+* GetFields - This returns the fields for that type of subject. Comes from our data info and happens to be the column headers of our data. We'll use it when assigning attributes of our "record" object. 
+* Recode - Does some stuff with the mothers age and baby's birth weight. Why divide by 100? I think it's to make the data easier to read as a human, not quite sure
+
+Methods the Respondents class has:
+* ReadRecords - Reads the file and recods it. Same method as the one in pregnancies class, but use the constructor for Respondents
+* GetFilename - This is hard-coded to get the specific data file for respondents
+* GetFileds - This returns the fields for that type of subject. Comes from our data info and happens to be the column headers of our data. Only case ID in this case. 
+
+Methods they share:
+* Init (with a records list)
+* Len
+* Readfile - process the file and make one Python object per record. Keep adding to it until the data is done.
+* MakeRecord - This is used in ReadFile. It's the process of building that one object out of the line of data
+* AddRecord - Given a new record, append that to your existing list of records
+* ExtendRecord - Given a bunch of new records, append that to your exising list of records?
+* Recode - nothing but "pass". What does this do exactly?
+
+QS:
+
+* In 'survey.py' line 88, won't they say 'records' is not defined?
+* Hm, in line 96, using the keyword 'records' twice...? Once is the existing table, one is the chunk of new ones?
+* What's the deal with the "Recode" method? Just says "pass."
+* Uh oh, there's no "Recode" method on "Respondents." Is that to be expected?
