@@ -1,0 +1,27 @@
+Don't quite understand the type of the "Items" method. Is it a dict? Had trouble iterating over it.
+
+for k, v in pmf.Items(): # this worked
+
+dist = pmf.Items
+for k, v in dist.iteritems(): 
+# this didn't work: 'function' object has no attribute 'iteritems'
+
+dist = pmf.d.Items
+for k, v in dist.iteritems():
+	sum_probabilities += k*v
+	return sum_probabilities
+# this worked 'dict' object has no attribute 'Items'	
+
+for k, v in pmf.Items: 
+# This didn't work: 'instancemethod' object is not iterable
+
+What's the difference between print on a dict vs print dict.d?
+
+How do you print a pmf? pmf.d?
+
+* How are people organizing their assignments and modules?
+
+* For Pumpkins. Print things out with printf
+
+* Things I don't really understand:
+* iteritems()
